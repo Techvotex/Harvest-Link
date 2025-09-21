@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>Add a Product</h2>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-success">Add Product</button>
+  </form>
+{% endblock %}
+
+<div class="mb-3">
+  <label>Quantity (kg/units)</label>
+  {{ form.quantity }}
+</div>
